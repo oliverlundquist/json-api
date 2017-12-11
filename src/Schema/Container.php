@@ -160,7 +160,8 @@ class Container implements ContainerInterface, LoggerAwareInterface
         if (is_string($classNameOrCallable) === true) {
             $schema = $this->createSchemaFromClassName($classNameOrCallable);
         } else {
-            assert('is_callable($classNameOrCallable) === true');
+            // assert('is_callable($classNameOrCallable) === true');
+            assert(is_callable($classNameOrCallable));
             $schema = $this->createSchemaFromCallable($classNameOrCallable);
         }
         $this->setCreatedProvider($type, $schema);

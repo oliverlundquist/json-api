@@ -243,6 +243,10 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
         }
 
         foreach ($fields as $type => $requestedFields) {
+            if (! count($requestedFields)) {
+                return false;
+            }
+
             if (array_key_exists($type, $this->fieldSetTypes) === false) {
                 return false;
             }

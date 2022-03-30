@@ -21,14 +21,7 @@
     }
   ],
   "require": {},
-  "require-dev": {
-    "phpunit/phpunit": "^4.6 || ^5.0 || ^6.0",
-    "mockery/mockery": "~0.9.4",
-    "scrutinizer/ocular": "^1.3",
-    "squizlabs/php_codesniffer": "^2.5",
-    "monolog/monolog": "^1.18",
-    "phpmd/phpmd": "^2.6"
-  },
+  "require-dev": {},
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {

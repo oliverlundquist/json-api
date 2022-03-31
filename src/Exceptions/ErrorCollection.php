@@ -21,6 +21,7 @@ use \ArrayAccess;
 use \Serializable;
 use \ArrayIterator;
 use \IteratorAggregate;
+use \Traversable;
 use \Neomerx\JsonApi\Document\Error;
 use \Neomerx\JsonApi\Contracts\Document\LinkInterface;
 use \Neomerx\JsonApi\Contracts\Document\ErrorInterface;
@@ -41,7 +42,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Serializable, C
     /**
      * @inheritdoc
      */
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->items);
     }

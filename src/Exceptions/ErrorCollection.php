@@ -84,7 +84,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Serializable, C
      *
      * @return ErrorInterface
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->items[$offset];
     }

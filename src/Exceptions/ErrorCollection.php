@@ -18,7 +18,6 @@
 
 use \Countable;
 use \ArrayAccess;
-use \Serializable;
 use \ArrayIterator;
 use \IteratorAggregate;
 use \Traversable;
@@ -32,7 +31,7 @@ use \Neomerx\JsonApi\Contracts\Document\DocumentInterface;
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class ErrorCollection implements IteratorAggregate, ArrayAccess, Serializable, Countable
+class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
 {
     /**
      * @var array
@@ -58,17 +57,17 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Serializable, C
     /**
      * @inheritdoc
      */
-    public function serialize()
+    public function __serialize(): array
     {
-        return serialize($this->items);
+        return $this->items;
     }
 
     /**
      * @inheritdoc
      */
-    public function unserialize($serialized)
+    public function __unserialize(array $data): void
     {
-        $this->items = unserialize($serialized);
+        $this->items = $data;
     }
 
     /**

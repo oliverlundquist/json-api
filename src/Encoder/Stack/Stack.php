@@ -17,6 +17,7 @@
  */
 
 use \ArrayIterator;
+use \Traversable;
 use \Neomerx\JsonApi\Contracts\Encoder\Stack\StackInterface;
 use \Neomerx\JsonApi\Contracts\Schema\ResourceObjectInterface;
 use \Neomerx\JsonApi\Contracts\Encoder\Stack\StackFrameInterface;
@@ -102,7 +103,7 @@ class Stack implements StackInterface
     /**
      * @inheritdoc
      */
-    public function count()
+    public function count(): int
     {
         return $this->size;
     }
@@ -110,7 +111,7 @@ class Stack implements StackInterface
     /**
      * @inheritdoc
      */
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new ArrayIterator($this->stack);
     }

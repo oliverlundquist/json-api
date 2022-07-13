@@ -168,7 +168,7 @@ class ParametersAnalyzer implements ParametersAnalyzerInterface, LoggerAwareInte
 
         if ($path !== null) {
             foreach ($paths as $targetPath) {
-                if (strpos($targetPath, $path) === 0) {
+                if (strpos($targetPath, $path . '.') === 0) {
                     $hasMatch = true;
                     break;
                 }

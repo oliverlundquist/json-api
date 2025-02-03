@@ -98,7 +98,7 @@ interface EncoderInterface
      *
      * @return string
      */
-    public function encodeData($data, EncodingParametersInterface $parameters = null);
+    public function encodeData($data, ?EncodingParametersInterface $parameters = null);
 
     /**
      * Encode input as JSON API string with a list of resource identifiers.
@@ -108,7 +108,7 @@ interface EncoderInterface
      *
      * @return string
      */
-    public function encodeIdentifiers($data, EncodingParametersInterface $parameters = null);
+    public function encodeIdentifiers($data, ?EncodingParametersInterface $parameters = null);
 
     /**
      * Encode error as JSON API string.

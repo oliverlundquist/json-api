@@ -62,7 +62,7 @@ class JsonApiException extends RuntimeException
      * @SuppressWarnings(PHPMD.StaticAccess)
      * @SuppressWarnings(PHPMD.ElseExpression)
      */
-    public function __construct($errors, $httpCode = self::DEFAULT_HTTP_CODE, Exception $previous = null)
+    public function __construct($errors, $httpCode = self::DEFAULT_HTTP_CODE, ?Exception $previous = null)
     {
         parent::__construct(T::t('JSON API error'), 0, $previous);
 

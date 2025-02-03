@@ -58,7 +58,7 @@ class StackFrame implements StackFrameInterface
      *
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function __construct(StackFrameReadOnlyInterface $previous = null)
+    public function __construct(?StackFrameReadOnlyInterface $previous = null)
     {
         settype($level, 'int');
 

@@ -28,7 +28,7 @@ interface StackFactoryInterface
      *
      * @return StackFrameInterface
      */
-    public function createFrame(StackFrameReadOnlyInterface $previous = null);
+    public function createFrame(?StackFrameReadOnlyInterface $previous = null);
 
     /**
      * Create stack.

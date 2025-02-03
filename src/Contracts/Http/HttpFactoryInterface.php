@@ -72,11 +72,11 @@ interface HttpFactoryInterface
      */
     public function createQueryParameters(
         $includePaths = null,
-        array $fieldSets = null,
+        ?array $fieldSets = null,
         $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null,
-        array $unrecognizedParams = null
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null,
+        ?array $unrecognizedParams = null
     );
 
     /**
@@ -184,10 +184,10 @@ interface HttpFactoryInterface
      */
     public function createQueryChecker(
         $allowUnrecognized = false,
-        array $includePaths = null,
-        array $fieldSetTypes = null,
-        array $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null
+        ?array $includePaths = null,
+        ?array $fieldSetTypes = null,
+        ?array $sortParameters = null,
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null
     );
 }

@@ -140,7 +140,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -165,7 +165,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -190,7 +190,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -215,7 +215,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -242,7 +242,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -267,7 +267,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -294,7 +294,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -321,7 +321,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -348,7 +348,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -375,7 +375,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {
@@ -405,7 +405,7 @@ class ErrorCollection implements IteratorAggregate, ArrayAccess, Countable
         $detail = null,
         $status = null,
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $code = null,
         $meta = null
     ) {

@@ -97,7 +97,7 @@ class Factory implements FactoryInterface
     /**
      * @inheritdoc
      */
-    public function createEncoder(ContainerInterface $container, EncoderOptions $encoderOptions = null)
+    public function createEncoder(ContainerInterface $container, ?EncoderOptions $encoderOptions = null)
     {
         $encoder = new Encoder($this, $container, $encoderOptions);
 
@@ -123,13 +123,13 @@ class Factory implements FactoryInterface
      */
     public function createError(
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $status = null,
         $code = null,
         $title = null,
         $detail = null,
         $source = null,
-        array $meta = null
+        ?array $meta = null
     ) {
         return new Error($idx, $aboutLink, $status, $code, $title, $detail, $source, $meta);
     }
@@ -178,7 +178,7 @@ class Factory implements FactoryInterface
     /**
      * @inheritdoc
      */
-    public function createFrame(StackFrameReadOnlyInterface $previous = null)
+    public function createFrame(?StackFrameReadOnlyInterface $previous = null)
     {
         return new StackFrame($previous);
     }
@@ -228,11 +228,11 @@ class Factory implements FactoryInterface
      */
     public function createQueryParameters(
         $includePaths = null,
-        array $fieldSets = null,
+        ?array $fieldSets = null,
         $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null,
-        array $unrecognizedParams = null
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null,
+        ?array $unrecognizedParams = null
     ) {
         return new EncodingParameters(
             $includePaths,
@@ -337,11 +337,11 @@ class Factory implements FactoryInterface
      */
     public function createQueryChecker(
         $allowUnrecognized = true,
-        array $includePaths = null,
-        array $fieldSetTypes = null,
-        array $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null
+        ?array $includePaths = null,
+        ?array $fieldSetTypes = null,
+        ?array $sortParameters = null,
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null
     ) {
         return new RestrictiveQueryChecker(
             $allowUnrecognized,

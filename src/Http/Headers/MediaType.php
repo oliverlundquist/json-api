@@ -58,7 +58,7 @@ class MediaType implements MediaTypeInterface
      * @param string                    $subType
      * @param array<string,string>|null $parameters
      */
-    public function __construct($type, $subType, array $parameters = null)
+    public function __construct($type, $subType, ?array $parameters = null)
     {
         $type = trim($type);
         if (empty($type) === true) {

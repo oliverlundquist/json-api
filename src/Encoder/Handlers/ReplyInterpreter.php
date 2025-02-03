@@ -242,7 +242,7 @@ class ReplyInterpreter implements ReplyInterpreterInterface, LoggerAwareInterfac
      *
      * @return bool[]
      */
-    private function getIfTargets($rootType, Frame $current, Frame $previous = null)
+    private function getIfTargets($rootType, Frame $current, ?Frame $previous = null)
     {
         $currentIsTarget = $this->parameterAnalyzer->isPathIncluded($current->getPath(), $rootType);
         $parentIsTarget  = ($previous === null ||

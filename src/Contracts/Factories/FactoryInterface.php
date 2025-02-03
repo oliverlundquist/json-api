@@ -43,7 +43,7 @@ interface FactoryInterface extends DFI, PrsFI, StkFI, HFI, HttpFI, SchFI, PSR3
      *
      * @return EncoderInterface
      */
-    public function createEncoder(ContainerInterface $container, EncoderOptions $encoderOptions = null);
+    public function createEncoder(ContainerInterface $container, ?EncoderOptions $encoderOptions = null);
 
     /**
      * Create codec matcher.

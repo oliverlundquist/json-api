@@ -71,11 +71,11 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
      */
     public function __construct(
         $allowUnrecognized = true,
-        array $includePaths = null,
-        array $fieldSetTypes = null,
-        array $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null
+        ?array $includePaths = null,
+        ?array $fieldSetTypes = null,
+        ?array $sortParameters = null,
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null
     ) {
         $this->includePaths        = $includePaths;
         $this->allowUnrecognized   = $allowUnrecognized;
@@ -203,7 +203,7 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
      *
      * @return bool
      */
-    private function keysWithinAllowed(array $toCheck = null, array $allowed = null)
+    private function keysWithinAllowed(?array $toCheck = null, ?array $allowed = null)
     {
         return $toCheck === null || $allowed === null || empty(array_diff_key($toCheck, $allowed));
     }
@@ -214,7 +214,7 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
      *
      * @return bool
      */
-    private function valuesWithinAllowed(array $toCheck = null, array $allowed = null)
+    private function valuesWithinAllowed(?array $toCheck = null, ?array $allowed = null)
     {
         return $toCheck === null || $allowed === null || empty(array_diff($toCheck, $allowed));
     }
@@ -224,7 +224,7 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
      *
      * @return array|null
      */
-    private function flip(array $array = null)
+    private function flip(?array $array = null)
     {
         return $array === null ? null : array_flip($array);
     }
@@ -236,7 +236,7 @@ class RestrictiveQueryChecker implements QueryCheckerInterface
      *
      * @return bool
      */
-    private function isFieldsAllowed(array $fields = null)
+    private function isFieldsAllowed(?array $fields = null)
     {
         if ($this->fieldSetTypes === null || $fields === null) {
             return true;

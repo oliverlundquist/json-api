@@ -40,7 +40,7 @@ trait ArraySerializerTrait
      *
      * @return array
      */
-    public function serializeData($data, EncodingParametersInterface $parameters = null)
+    public function serializeData($data, ?EncodingParametersInterface $parameters = null)
     {
         return $this->encodeDataToArray($this->getContainer(), $data, $parameters);
     }
@@ -51,7 +51,7 @@ trait ArraySerializerTrait
      *
      * @return array
      */
-    public function serializeIdentifiers($data, EncodingParametersInterface $parameters = null)
+    public function serializeIdentifiers($data, ?EncodingParametersInterface $parameters = null)
     {
         return $this->encodeIdentifiersToArray($data, $parameters);
     }

@@ -80,12 +80,12 @@ class Error implements ErrorInterface
      */
     public function __construct(
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $status = null,
         $code = null,
         $title = null,
         $detail = null,
-        array $source = null,
+        ?array $source = null,
         $meta = null
     ) {
         $this->checkIdx($idx);

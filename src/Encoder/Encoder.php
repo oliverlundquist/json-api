@@ -84,7 +84,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
     public function __construct(
         FactoryInterface $factory,
         ContainerInterface $container,
-        EncoderOptions $encoderOptions = null
+        ?EncoderOptions $encoderOptions = null
     ) {
         $this->factory        = $factory;
         $this->container      = $container;
@@ -158,7 +158,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
     /**
      * @inheritdoc
      */
-    public function encodeData($data, EncodingParametersInterface $parameters = null)
+    public function encodeData($data, ?EncodingParametersInterface $parameters = null)
     {
         $array  = $this->encodeDataToArray($this->getContainer(), $data, $parameters);
         $result = $this->encodeToJson($array);
@@ -169,7 +169,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
     /**
      * @inheritdoc
      */
-    public function encodeIdentifiers($data, EncodingParametersInterface $parameters = null)
+    public function encodeIdentifiers($data, ?EncodingParametersInterface $parameters = null)
     {
         $array  = $this->encodeIdentifiersToArray($data, $parameters);
         $result = $this->encodeToJson($array);
@@ -211,7 +211,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
     protected function encodeDataToArray(
         ContainerInterface $container,
         $data,
-        EncodingParametersInterface $parameters = null
+        ?EncodingParametersInterface $parameters = null
     ) {
         $this->checkInputData($data);
 
@@ -259,7 +259,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
      *
      * @return EncoderInterface
      */
-    public static function instance(array $schemas = [], EncoderOptions $encodeOptions = null)
+    public static function instance(array $schemas = [], ?EncoderOptions $encodeOptions = null)
     {
         $factory   = static::createFactory();
         $container = $factory->createContainer($schemas);
@@ -292,7 +292,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
      *
      * @return array
      */
-    protected function encodeIdentifiersToArray($data, EncodingParametersInterface $parameters = null)
+    protected function encodeIdentifiersToArray($data, ?EncodingParametersInterface $parameters = null)
     {
         $container = $this->getFactory()->createResourceIdentifierContainerAdapter($this->getContainer());
         $result    = $this->encodeDataToArray($container, $data, $parameters);
@@ -446,7 +446,7 @@ class Encoder implements EncoderInterface, LoggerAwareInterface
      */
     private function createParametersAnalyzer(
         ContainerInterface $container,
-        EncodingParametersInterface $parameters = null
+        ?EncodingParametersInterface $parameters = null
     ) {
         return $this->getFactory()->createParametersAnalyzer(
             $parameters === null ? $this->getFactory()->createQueryParameters() : $parameters,

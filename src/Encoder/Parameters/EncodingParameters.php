@@ -65,11 +65,11 @@ class EncodingParameters implements EncodingParametersInterface
      */
     public function __construct(
         $includePaths = null,
-        array $fieldSets = null,
+        ?array $fieldSets = null,
         $sortParameters = null,
-        array $pagingParameters = null,
-        array $filteringParameters = null,
-        array $unrecognizedParams = null
+        ?array $pagingParameters = null,
+        ?array $filteringParameters = null,
+        ?array $unrecognizedParams = null
     ) {
         $this->fieldSets           = $fieldSets;
         $this->includePaths        = $includePaths;

@@ -238,7 +238,7 @@ class ElementPresenter
      *
      * @return array|null|string
      */
-    private function getLinkRepresentation($prefix = null, LinkInterface $link = null)
+    private function getLinkRepresentation($prefix = null, ?LinkInterface $link = null)
     {
         return $link === null ? null : $this->getUrlRepresentation(
             $link->isTreatAsHref() === true ? $link->getSubHref() : $prefix . $link->getSubHref(),

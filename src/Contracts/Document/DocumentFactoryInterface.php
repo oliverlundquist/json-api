@@ -44,12 +44,12 @@ interface DocumentFactoryInterface
      */
     public function createError(
         $idx = null,
-        LinkInterface $aboutLink = null,
+        ?LinkInterface $aboutLink = null,
         $status = null,
         $code = null,
         $title = null,
         $detail = null,
         $source = null,
-        array $meta = null
+        ?array $meta = null
     );
 }

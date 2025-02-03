@@ -18,9 +18,11 @@
 
 use \Closure;
 use \LogicException;
-use \Psr\Http\Message\UriInterface;
+use \Psr\Http\Message\MessageInterface;
+use \Psr\Http\Message\RequestInterface;
 use \Psr\Http\Message\StreamInterface;
 use \Psr\Http\Message\ServerRequestInterface;
+use \Psr\Http\Message\UriInterface;
 
 /**
  * @package Neomerx\JsonApi
@@ -64,7 +66,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getHeader($name)
+    public function getHeader(string $name): array
     {
         $closure = $this->getHeaderClosure;
         $result  = $closure($name);
@@ -75,7 +77,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getQueryParams()
+    public function getQueryParams(): array
     {
         $closure = $this->getQueryParamsClosure;
         $result  = $closure();
@@ -86,7 +88,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getMethod()
+    public function getMethod(): string
     {
         $closure = $this->getMethodClosure;
         $result  = $closure();
@@ -106,7 +108,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getProtocolVersion()
+    public function getProtocolVersion(): string
     {
         // Method is not used.
         throw new LogicException();
@@ -115,7 +117,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withProtocolVersion($version)
+    public function withProtocolVersion(string $version): MessageInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -124,7 +126,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getHeaders()
+    public function getHeaders(): array
     {
         // Method is not used.
         throw new LogicException();
@@ -133,7 +135,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function hasHeader($name)
+    public function hasHeader(string $name): bool
     {
         // Method is not used.
         throw new LogicException();
@@ -142,7 +144,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getHeaderLine($name)
+    public function getHeaderLine(string $name): string
     {
         // Method is not used.
         throw new LogicException();
@@ -151,7 +153,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withHeader($name, $value)
+    public function withHeader(string $name, $value): MessageInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -160,7 +162,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader(string $name, $value): MessageInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -169,7 +171,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withoutHeader($name)
+    public function withoutHeader(string $name): MessageInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -178,7 +180,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getBody()
+    public function getBody(): StreamInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -187,7 +189,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): MessageInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -196,7 +198,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getRequestTarget()
+    public function getRequestTarget(): string
     {
         // Method is not used.
         throw new LogicException();
@@ -205,7 +207,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withRequestTarget($requestTarget)
+    public function withRequestTarget(string $requestTarget): RequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -214,7 +216,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withMethod($method)
+    public function withMethod(string $method): RequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -223,7 +225,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getUri()
+    public function getUri(): UriInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -234,7 +236,7 @@ class Request implements ServerRequestInterface
      *
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
-    public function withUri(UriInterface $uri, $preserveHost = false)
+    public function withUri(UriInterface $uri, bool $preserveHost = false): RequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -243,7 +245,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getServerParams()
+    public function getServerParams(): array
     {
         // Method is not used.
         throw new LogicException();
@@ -252,7 +254,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getCookieParams()
+    public function getCookieParams(): array
     {
         // Method is not used.
         throw new LogicException();
@@ -261,7 +263,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withCookieParams(array $cookies)
+    public function withCookieParams(array $cookies): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -270,7 +272,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withQueryParams(array $query)
+    public function withQueryParams(array $query): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -279,7 +281,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getUploadedFiles()
+    public function getUploadedFiles(): array
     {
         // Method is not used.
         throw new LogicException();
@@ -288,7 +290,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withUploadedFiles(array $uploadedFiles)
+    public function withUploadedFiles(array $uploadedFiles): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -297,7 +299,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withParsedBody($data)
+    public function withParsedBody($data): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -306,7 +308,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function getAttributes()
+    public function getAttributes(): array
     {
         // Method is not used.
         throw new LogicException();
@@ -324,7 +326,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withAttribute($name, $value)
+    public function withAttribute(string $name, $value): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();
@@ -333,7 +335,7 @@ class Request implements ServerRequestInterface
     /**
      * @inheritdoc
      */
-    public function withoutAttribute($name)
+    public function withoutAttribute(string $name): ServerRequestInterface
     {
         // Method is not used.
         throw new LogicException();

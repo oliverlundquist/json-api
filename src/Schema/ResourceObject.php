@@ -128,7 +128,7 @@ class ResourceObject implements ResourceObjectInterface
         SchemaProviderInterface $schema,
         $resource,
         $isInArray,
-        array $attributeKeysFilter = null
+        ?array $attributeKeysFilter = null
     ) {
         $this->checkInput($resource, $isInArray);
 
